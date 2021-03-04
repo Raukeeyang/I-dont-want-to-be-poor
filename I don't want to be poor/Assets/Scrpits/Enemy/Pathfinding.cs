@@ -8,6 +8,9 @@ public class Pathfinding : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
+    public bool enemy;
+    public Transform player;
+
     public Transform[] HotSposts;
     private int Spot;
 
@@ -16,14 +19,29 @@ public class Pathfinding : MonoBehaviour
     {
         waitTime = startWaitTime;
         Spot = 0;
+        enemy = false;
+        
+    }
+    private void Update()
+    {
+        if (enemy == false)
+        {
+            Path(HotSposts[Spot]);
+        }
+        else
+        {
+            Path(player);
+        }
+        
+
     }
 
     // Update is called once per frame
-    void Update()
+    public void Path(Transform point)
     {
-        transform.position = Vector2.MoveTowards(transform.position, HotSposts[Spot].position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
         
-        if (Vector3.Distance(transform.position, HotSposts[Spot].position)<0.1)
+        if (Vector3.Distance(transform.position, point.position)<0.1)
         {
             Spot++;
            // transform.LookAt(HotSposts[Spot], Vector3.up);
@@ -34,7 +52,10 @@ public class Pathfinding : MonoBehaviour
             {
                 Spot = 0;
             }
-            transform.right = HotSposts[Spot].position - transform.position;
+            
         }
+        transform.right = point.position - transform.position;
     }
+
+
 }
