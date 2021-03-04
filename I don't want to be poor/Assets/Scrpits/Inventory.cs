@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public int durians;
     public int sandias;
 
-    void RecibirFruta(int fruta)
+    public void RecibirFruta(int fruta)
     {
         if (frutasMax > frutasActuales)
         {
