@@ -30,7 +30,7 @@ public class Fruteria : MonoBehaviour
         recover = uvasDar;
         while (uvasDar > 0)
         {
-            Inventory.RecibirFruta(2);
+            Inventory.RecibirFruta(2);  
             uvasDar -= 1;
         }
         uvasDar = recover;

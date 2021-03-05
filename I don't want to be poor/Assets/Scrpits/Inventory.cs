@@ -11,6 +11,9 @@ public class Inventory : MonoBehaviour
     public int durians;
     public int sandias;
 
+    public Transform playerPosition;
+
+    public GameObject bananaPrefab;
     public void RecibirFruta(int fruta)
     {
         if (frutasMax > frutasActuales)
@@ -46,6 +49,15 @@ public class Inventory : MonoBehaviour
                 break;
             case 4:
                 break;
+        }
+    }
+
+    void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject banana = Instantiate(bananaPrefab, playerPosition.position, playerPosition.rotation);
         }
     }
 }
