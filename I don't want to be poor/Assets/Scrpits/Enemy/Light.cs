@@ -23,6 +23,6 @@ public class Light : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player") path.GetComponent<Pathfinding>().enemy = false;
+        if (collision.gameObject.tag == "Player") path.GetComponent<Pathfinding>().lost = true;
     }
 }

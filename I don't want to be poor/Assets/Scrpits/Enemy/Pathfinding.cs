@@ -9,6 +9,8 @@ public class Pathfinding : MonoBehaviour
     public float startWaitTime;
 
     public bool enemy;
+    public bool lost;
+    public float timer;
     public Transform player;
 
     public Transform[] HotSposts;
@@ -20,6 +22,8 @@ public class Pathfinding : MonoBehaviour
         waitTime = startWaitTime;
         Spot = 0;
         enemy = false;
+        lost = false;
+        timer = 0;
         
     }
     private void Update()
@@ -31,6 +35,17 @@ public class Pathfinding : MonoBehaviour
         else
         {
             Path(player);
+        }
+        if (lost)
+        {
+            timer += Time.deltaTime;
+
+            if (timer>=1.5f)
+            {
+                enemy = false;
+                timer = 0;
+                lost = false;
+            }
         }
         
 
