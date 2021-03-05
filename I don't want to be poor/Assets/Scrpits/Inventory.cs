@@ -34,9 +34,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void UsarFruta(int fruta)
+    void UsarFruta(int frutaUsada)
     {
-        switch (fruta)
+        switch (frutaUsada)
         {
             case 1:
                 break;
