@@ -309,6 +309,7 @@ MonoBehaviour:
   uvas: 0
   durians: 0
   sandias: 0
+  bananaPrefab: {fileID: 5738434045150547249, guid: c6df32b0b6a234745b020aad1c1edee9, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
