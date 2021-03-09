@@ -303,14 +303,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22a8aab10b263a41b2b916736187825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frutasMax: 3
+  frutasMax: 100000
   frutasActuales: 0
   platanos: 0
   uvas: 0
   durians: 0
   sandias: 0
+  frutaEquipada: 1
+  smalled: 0
   bananaPrefab: {fileID: 5738434045150547249, guid: c6df32b0b6a234745b020aad1c1edee9, type: 3}
   player: {fileID: 359995555}
+  recarga: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platanosDar: 3
-  uvasDar: 0
+  uvasDar: 3
   duriansDar: 0
   sandiasDar: 0
   frutaComoldin: 0
