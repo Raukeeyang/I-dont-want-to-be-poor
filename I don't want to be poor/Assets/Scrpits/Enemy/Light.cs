@@ -20,9 +20,11 @@ public class Light : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player") path.GetComponent<Pathfinding>().enemy=true;
+        if (collision.gameObject.tag == "Player") path.GetComponent<Pathfinding>().speed=12;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player") path.GetComponent<Pathfinding>().lost = true;
+        if (collision.gameObject.tag == "Player") path.GetComponent<Pathfinding>().speed = 8;
     }
 }

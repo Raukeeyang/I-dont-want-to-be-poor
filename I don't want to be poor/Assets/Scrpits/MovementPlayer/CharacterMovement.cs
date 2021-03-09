@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public bool moving = false;
     public float speed = 5.0f;
+    public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +66,15 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             moving = true;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        { 
+            Time.timeScale = 0; 
+            Debug.Log ("Choca");
+            loseScreen.SetActive(true);
         }
     }
 }
