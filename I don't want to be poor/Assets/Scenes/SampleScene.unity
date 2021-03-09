@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359995553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.61, y: 0.059999943, z: -0.36120468}
+  m_LocalPosition: {x: 3.61, y: 0.059999943, z: -1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -310,6 +310,7 @@ MonoBehaviour:
   durians: 0
   sandias: 0
   bananaPrefab: {fileID: 5738434045150547249, guid: c6df32b0b6a234745b020aad1c1edee9, type: 3}
+  player: {fileID: 359995555}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

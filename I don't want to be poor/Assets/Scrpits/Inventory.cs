@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject bananaPrefab;
 
+    public Transform player;
+
     public void RecibirFruta(int fruta)
     {
         if (frutasMax > frutasActuales)
@@ -55,7 +57,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject Banana = Instantiate (bananaPrefab);
+            GameObject Banana = Instantiate (bananaPrefab, player.position, player.rotation);
         }
     }
 }
