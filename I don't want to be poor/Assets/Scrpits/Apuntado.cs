@@ -8,13 +8,10 @@ public class Apuntado : MonoBehaviour
     public Transform apuntado;
     public Transform banana;
 
-    void Start()
+    void Update()
     {
-        var direccion = apuntado.position - banana.position;
-        while (1 > 0)
-        {
-            transform.Translate(direccion.normalized * speed * Time.deltaTime, Space.World);
-        }
+        Vector2 direccion = apuntado.position - banana.position;
+        transform.Translate(direccion.normalized * speed * Time.deltaTime, Space.World);
     }
 
 }
