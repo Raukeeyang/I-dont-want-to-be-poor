@@ -13,10 +13,12 @@ public class Fruteria : MonoBehaviour
     public Inventory Inventory;
     public void OnTriggerEnter2D()
     {
+        Inventory.recarga = true;
         Inventory.platanos = 0;
         Inventory.uvas = 0;
         Inventory.durians = 0;
         Inventory.sandias = 0;
+        Inventory.frutasActuales = 0;
         frutaComoldin = platanosDar;
         while (platanosDar > 0)
         {
@@ -45,5 +47,6 @@ public class Fruteria : MonoBehaviour
             sandiasDar -= 1;
         }
         sandiasDar = frutaComoldin;
+        Inventory.recarga = false;
     }
 }

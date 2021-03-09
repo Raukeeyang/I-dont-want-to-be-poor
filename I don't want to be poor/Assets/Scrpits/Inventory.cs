@@ -15,8 +15,10 @@ public class Inventory : MonoBehaviour
 
     public Transform player;
 
+    public bool recarga;
     public void RecibirFruta(int fruta)
     {
+        
         if (frutasMax > frutasActuales)
         {
             switch (fruta)
@@ -59,7 +61,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && platanos > 0)
+        if (Input.GetMouseButtonDown(0) && platanos > 0 && recarga == false)
         {
             platanos -= 1;
             frutasActuales -= 1;
