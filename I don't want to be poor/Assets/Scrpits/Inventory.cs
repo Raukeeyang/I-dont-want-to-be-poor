@@ -57,9 +57,18 @@ public class Inventory : MonoBehaviour
             frutaEquipada += (int)Input.mouseScrollDelta.y;
         }
 
+        if (Input.mouseScrollDelta.y < 0)
+        {
+            frutaEquipada += (int)Input.mouseScrollDelta.y;
+        }
+
         if (frutaEquipada > 4)
         {
             frutaEquipada = 1;
+        }
+        if (frutaEquipada < 1)
+        {
+            frutaEquipada = 4;
         }
 
         switch (frutaEquipada)
