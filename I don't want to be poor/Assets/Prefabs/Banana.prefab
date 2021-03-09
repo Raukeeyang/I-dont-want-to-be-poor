@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa2796bebfe4cf4bb1773e978b9711d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 38
   apuntado: {fileID: 1640960674592499239}
   banana: {fileID: 2659000511456631942}

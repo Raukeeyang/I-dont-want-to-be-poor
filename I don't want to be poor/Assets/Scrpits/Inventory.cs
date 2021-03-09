@@ -23,15 +23,19 @@ public class Inventory : MonoBehaviour
             {
                 case 1:
                     platanos += 1;
+                    frutasActuales += 1;
                     break;
                 case 2:
                     uvas += 1;
+                    frutasActuales += 1;
                     break;
                 case 3:
                     sandias += 1;
+                    frutasActuales += 1;
                     break;
                 case 4:
                     durians += 1;
+                    frutasActuales += 1;
                     break;
 
             }
@@ -55,8 +59,10 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && platanos > 0)
         {
+            platanos -= 1;
+            frutasActuales -= 1;
             GameObject Banana = Instantiate (bananaPrefab, player.position, player.rotation);
         }
     }
