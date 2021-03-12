@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public Animator animator;
     public bool moving = false;
     public float speed = 5.0f;
     public GameObject loseScreen;
-    public Animator animator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    
+    
 
     // Update is called once per frame
     void Update()
@@ -28,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("Horizontal", Vector3.down.x);
         animator.SetFloat("Vertical", Vector3.right.y);
         animator.SetFloat("Vertical", Vector3.left.y);
-        //animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Speed", Vector3.SqrMagnitude(Vector3.one));
 
     }
 
