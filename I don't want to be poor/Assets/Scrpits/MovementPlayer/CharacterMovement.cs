@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public bool moving = false;
     public float speed = 5.0f;
     public GameObject loseScreen;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,13 @@ public class CharacterMovement : MonoBehaviour
             movement();
         }
         movementCheck();
+
+        animator.SetFloat("Horizontal", Vector3.up.x);
+        animator.SetFloat("Horizontal", Vector3.down.x);
+        animator.SetFloat("Vertical", Vector3.right.y);
+        animator.SetFloat("Vertical", Vector3.left.y);
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
+
     }
 
     public void SetMoving(bool val)
