@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
         
         
         
-        animator.SetFloat("Speed", Vector3.SqrMagnitude(Vector3.one));
+        
 
     }
 
@@ -61,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
             moving = true;
         }
 
-       
+        animator.SetFloat("Speed", Vector3.SqrMagnitude(Vector3.one));
 
     }
 
