@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    //Movement Animation & code
     public Animator animator;
     public bool moving = false;
     public float speed = 5.0f;
+
+    //Win and Lose System
     public GameObject loseScreen;
-    
-    
-    
+    public GameObject wallet;
+
 
     // Update is called once per frame
     void Update()
@@ -20,15 +22,9 @@ public class CharacterMovement : MonoBehaviour
             movement();
         }
         movementCheck();
-
-        
-        
-        
-        
-        
-
     }
 
+    //Movement player
     public void SetMoving(bool val)
     {
         moving = val;
@@ -76,6 +72,8 @@ public class CharacterMovement : MonoBehaviour
             moving = true;
         }
     }
+
+    //Lose system
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -84,5 +82,17 @@ public class CharacterMovement : MonoBehaviour
             Debug.Log ("Choca");
             loseScreen.SetActive(true);
         }
+
+        if (collision.gameObject.tag == "Goal")
+        {
+            Win();
+        }
+    }
+
+    //Win system
+
+    public void Win()
+    {
+        Debug.Log("You win!");
     }
 }

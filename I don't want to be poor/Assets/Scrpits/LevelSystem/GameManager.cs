@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,6 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene("LastLevel");
     }
 }
