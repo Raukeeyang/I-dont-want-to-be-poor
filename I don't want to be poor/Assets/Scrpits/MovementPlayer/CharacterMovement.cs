@@ -21,10 +21,10 @@ public class CharacterMovement : MonoBehaviour
         }
         movementCheck();
 
-        animator.SetFloat("Horizontal", Vector3.up.x);
-        animator.SetFloat("Horizontal", Vector3.down.x);
-        animator.SetFloat("Vertical", Vector3.right.y);
-        animator.SetFloat("Vertical", Vector3.left.y);
+        
+        
+        
+        
         animator.SetFloat("Speed", Vector3.SqrMagnitude(Vector3.one));
 
     }
@@ -39,22 +39,25 @@ public class CharacterMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.W))
             {
             transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+            animator.SetFloat("Horizontal", Vector3.up.x);
             moving = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
+            animator.SetFloat("Horizontal", Vector3.down.x);
             moving = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime,
-                Space.World);
+            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+            animator.SetFloat("Vertical", Vector3.right.y);
             moving = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
+            animator.SetFloat("Vertical", Vector3.left.y);
             moving = true;
         }
 
