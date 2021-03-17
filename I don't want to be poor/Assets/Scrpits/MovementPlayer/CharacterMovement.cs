@@ -13,15 +13,27 @@ public class CharacterMovement : MonoBehaviour
     public GameObject loseScreen;
     public GameObject wallet;
 
+    Vector2 movement;
 
     // Update is called once per frame
     void Update()
     {
         if (moving == true)
         {
-            movement();
+            movementt();
         }
         movementCheck();
+
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Horizontal", movement.x);
+
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     //Movement player
@@ -30,35 +42,41 @@ public class CharacterMovement : MonoBehaviour
         moving = val;
     }
 
-    void movement()
+    void movementt()
     {
         if(Input.GetKey(KeyCode.W))
             {
-            transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
-            animator.SetFloat("Horizontal", Vector3.up.x);
+            //  transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+           // transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            
             moving = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
-            animator.SetFloat("Horizontal", Vector3.down.x);
+            //  transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
+           // transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            
             moving = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
-            animator.SetFloat("Vertical", Vector3.right.y);
+            // transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+           // transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            
             moving = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
-            animator.SetFloat("Vertical", Vector3.left.y);
+            //  transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
+           // transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            
             moving = true;
         }
 
-        animator.SetFloat("Speed", Vector3.SqrMagnitude(Vector3.one));
+        transform.Translate(movement * speed * Time.deltaTime);
 
+        
+        
     }
 
     void movementCheck ()

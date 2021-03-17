@@ -8,6 +8,7 @@ public class RotateToCursor : MonoBehaviour
     Vector3 direction;
     Camera cam;
     Rigidbody2D rid;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,8 @@ public class RotateToCursor : MonoBehaviour
 
     void rotateToCamera ()
     {
-        mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z - cam.transform.position.z));
-        rid.transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x)) * Mathf.Rad2Deg);
+        //mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z - cam.transform.position.z));
+        rid.transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2((mousePos.y), (mousePos.x)) * Mathf.Rad2Deg);
+        //cam.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 }
