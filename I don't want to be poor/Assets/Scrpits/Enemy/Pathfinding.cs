@@ -15,6 +15,7 @@ public class Pathfinding : MonoBehaviour
 
     public Transform[] HotSposts;
     private int Spot;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,12 @@ public class Pathfinding : MonoBehaviour
     public void Path(Transform point)
     {
         transform.position = Vector2.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
-        
+
+        animator.SetFloat("Vertical", point.position.y);
+        animator.SetFloat("Vertical", - point.position.y);
+        animator.SetFloat("Horizontal", point.position.x);
+        animator.SetFloat("Horizontal", - point.position.x);
+
         if (Vector3.Distance(transform.position, point.position)<0.1)
         {
             Spot++;
