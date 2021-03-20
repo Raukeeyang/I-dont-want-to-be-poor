@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -95,8 +96,8 @@ public class CharacterMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        { 
-            Time.timeScale = 0; 
+        {
+            Time.timeScale = 0f;
             Debug.Log ("Choca");
             loseScreen.SetActive(true);
         }
@@ -112,5 +113,6 @@ public class CharacterMovement : MonoBehaviour
     public void Win()
     {
         Debug.Log("You win!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

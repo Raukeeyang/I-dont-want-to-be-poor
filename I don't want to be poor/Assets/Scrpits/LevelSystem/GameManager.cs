@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("LastLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
