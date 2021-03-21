@@ -13,7 +13,9 @@ public class Inventory : MonoBehaviour
     public int frutaEquipada;
 
     public bool smalled = false;
+    bool runned = false;
 
+    public CharacterMovement playerM;
 
     public GameObject bananaPrefab;
 
@@ -52,34 +54,20 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.mouseScrollDelta.y > 0)
-        {
-            frutaEquipada += (int)Input.mouseScrollDelta.y;
-        }
+        
+        
 
-        if (Input.mouseScrollDelta.y < 0)
-        {
-            frutaEquipada += (int)Input.mouseScrollDelta.y;
-        }
 
-        if (frutaEquipada > 4)
-        {
-            frutaEquipada = 1;
-        }
-        if (frutaEquipada < 1)
-        {
-            frutaEquipada = 4;
-        }
 
         switch (frutaEquipada)
         {
             
             case 1:
-                if (Input.GetMouseButtonDown(0) && platanos > 0 && recarga == false)
+                if (Input.GetMouseButtonDown(0) && platanos > 0 && recarga == false && runned == false)
                 {
                     platanos -= 1;
                     frutasActuales -= 1;
-                    GameObject Banana = Instantiate(bananaPrefab, player.position, player.rotation);
+                    StartCoroutine(plataCooldown());
                 }
                 break;
             case 2:
@@ -90,10 +78,6 @@ public class Inventory : MonoBehaviour
                     transform.localScale = new Vector2(0.55f, 0.55f);
                     StartCoroutine (uvaCooldown());
                 }
-                break;
-            case 3:
-                break;
-            case 4:
                 break;
         }
 
@@ -106,5 +90,14 @@ public class Inventory : MonoBehaviour
         yield return new WaitForSeconds(15f);
         transform.localScale = new Vector2(1f, 1f);
         smalled = false;
+    }
+
+    IEnumerator plataCooldown()
+    {
+        runned = true;
+        playerM.speed += 45;
+        yield return new WaitForSeconds(0.2f);
+        playerM.speed -= 45;
+        runned = false;
     }
 }
