@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CustomEditor (typeof (EnemyDetection))]
+/*[CustomEditor (typeof (EnemyDetection))]
 public class FieldOfViewEditor : Editor
 {
     private void OnSceneGUI()
@@ -26,3 +26,4 @@ public class FieldOfViewEditor : Editor
         }
     }
 }
+*/
